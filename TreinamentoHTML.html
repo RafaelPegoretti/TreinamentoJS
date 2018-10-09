@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>src="TreinamentoJS.js"</script>
+    <head>
+        <meta charset="UTF-8">
+        <title>Treinamento HTML</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+</style>
+    </head>
+
+    <body>
+        <h1>Treinamento</h1>
+        <form>
+            Nome <input type="text" id="txtNome" class="txt" >
+            <br><br>
+            Idade <input type="text" id="txtIdade" class="txt">
+            <br><br>
+            Sexo<input type="text" id="txtSexo" class="txt">
+            <br><br>
+            Estado Civil<input type="text" id="txtEstadoCivil" class="txt">
+            <br><br>
+            <button type="button" id="btn">Feito</button>
+            <br><br>
+
+                <table id="tblTabela">
+                    <tr>
+                        <th> Nome </th>
+                        <td> Idade </td>
+                        <td> Sexo </td>
+                        <td> Estado Civil </td>
+                    </tr>
+                    <tr>
+                        <th> Regios </th>
+                        <td> 25 </td>
+                        <td> Masculino </td>
+                        <td> Casado </td>
+                    </tr>
+                </table>
+
+
+        </form>
+
+        <script>
+                var $btn = document.querySelector('#btn');
+
+                $btn.addEventListener('click',function(){
+                    var $txt = document.getElementsByClassName('txt');
+                    var tabela = document.getElementById("tblTabela");
+                    var numeroLinhas = tabela.rows.length;
+                    var numeroColunas = tabela.rows[numeroLinhas-1].cells.length;
+
+                    var novaLinha = tabela.insertRow(numeroLinhas);
+                    for (var j = 0; j < $txt.leght; j++) {
+                        novaCeluna = novaLinha.insertCell(j);
+                        novaCeluna.innerHTML = $txt[j].Value;
+                    }
+                });
+        </script>
+    </body>
+
+</html>
